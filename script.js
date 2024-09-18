@@ -72,12 +72,7 @@ const renderizarLista = () => {
     //adiciona a imagem ao item da lista
     itemLista.append(favorito)
       // Carregar filmes favoritos do localStorage e marcar na UI
-    // Carregar filmes favoritos do localStorage e marcar na UI
-    puxaEssaPorra.forEach((index)=> {
-      if(index.id == filme.id){
-        favorito.src = 'img/heart-fill.svg'
-      }
-    })
+
   });
 };
 
