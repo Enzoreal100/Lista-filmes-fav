@@ -42,12 +42,6 @@ const btn1 = document.querySelector('button')
 //pega a lista de filmes
 const listaFilmes = document.querySelector('#listaFilmes')
 
-// Ao carregar a página, executa a função que renderiza os elementos na tela
-
-window.onload = () => {
-  renderizarLista()
-}
-
 // Função para renderizar filmes na tela
 
 const renderizarLista = () => {
@@ -164,4 +158,10 @@ function removeFromLocalStorage(id) {
 function puxaLocalStorage(){
   let puxaLocalStorage = JSON.parse(localStorage.getItem('favoritos'));
   return puxaLocalStorage;
+}
+
+// Ao carregar a página, executa a função que renderiza os elementos na tela
+
+window.onload = () => {
+  renderizarLista()
 }
