@@ -29,7 +29,8 @@ const filmes = [
     nome: 'A Lagoa Azul',
     genero: 'romance',
     lancamento: 1983
-  }]
+  },
+]
 
 // Criando um array de filmes favoritos
 
@@ -42,6 +43,12 @@ const btn1 = document.querySelector('button')
 //pega a lista de filmes
 const listaFilmes = document.querySelector('#listaFilmes')
 
+// Ao carregar a página, executa a função que renderiza os elementos na tela
+
+window.onload = () => {
+  renderizarLista()
+}
+
 // Função para renderizar filmes na tela
 
 const renderizarLista = () => {
@@ -51,7 +58,6 @@ const renderizarLista = () => {
   listaFilmes.innerHTML = ""
   //percorre o array de filmes, inserindo um li com o nome do filme a cada volta do loop
   filmes.forEach((filme) => {
-    console.log(filme);
     const itemLista = document.createElement('li')
     //adiciona o li à lista de filmes
     listaFilmes.append(itemLista)
@@ -156,12 +162,6 @@ function removeFromLocalStorage(id) {
 }
 
 function puxaLocalStorage(){
-  let puxaLocalStorage = JSON.parse(localStorage.getItem('favoritos'));
+  let puxaLocalStorage = JSON.parse(localStorage.getItem('favoritos')) || [];
   return puxaLocalStorage;
-}
-
-// Ao carregar a página, executa a função que renderiza os elementos na tela
-
-window.onload = () => {
-  renderizarLista()
 }
