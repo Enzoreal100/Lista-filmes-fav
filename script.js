@@ -149,7 +149,7 @@ function removeFromLocalStorage(id) {
   //checa se já existe um campo de favoritos no LocalStorage
   //se houver, ele salva no array filmesFavoritos
   if (localStorage.getItem('favoritos')) {
-    filmesFavoritos = JSON.parse(localStorage.getItem('favoritos'));
+    filmesFavoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
   }
   //procura no array o id do filme
   const procurarFilme = filmesFavoritos.find(movie => movie.id === id)
